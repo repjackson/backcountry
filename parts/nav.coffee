@@ -30,6 +30,10 @@ if Meteor.isClient
         # @autorun -> Meteor.subscribe 'unread_messages'
 
     Template.nav.helpers
+        cart_items: ->
+            Docs.find 
+                model:'cart_item'
+                _author_id: Meteor.userId()
         notifications: ->
             Docs.find
                 model:'notification'

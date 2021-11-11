@@ -75,6 +75,13 @@ if Meteor.isClient
         
         
     Template.food_view.events
+        'click .add_to_cart': ->
+            new_id = 
+                Docs.insert 
+                    model:'cart_item'
+                    product_id:@_id
+                    status:'in_cart'
+                
         'click .quick_buy': ->
             if confirm 'quick buy?'
                 new_id = 

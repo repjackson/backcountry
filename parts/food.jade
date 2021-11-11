@@ -176,9 +176,6 @@ template(name='food_view')
                         .ui.small.inline.header
                             |delivery instructions:
                         |#{delivery_instructions}      
-                    +boolean_view key='pickup_delivery' label='pickup' direct=true icon='box'
-                    +boolean_view key='unit_dropoff_delivery' label='home dropoff' icon='contactless-delivery' direct=true
-                    +boolean_view key='building_dropoff_delivery' label='building dropoff' icon='building' direct=true
                     +food_orders
                     +related_foods
                     
