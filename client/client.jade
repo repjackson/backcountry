@@ -66,11 +66,10 @@ template(name='nav')
                 +i name='shield' cl='ui inline mini image'
                 |staff
         .right.menu
-            // if is_admin
-            //     a.item(href='/tasks' class="{{isActivePath '/tasks'}}" title='tasks')
-            //         +i name='tasks' cl='ui inline mini image'
-            //     a.item(href='/m/model' class="{{isActivePath '/m/model'}}" title='delta')
-            //         +i name='database' cl='ui inline mini image'
+            a.item(href='/tasks' class="{{isActivePath '/tasks'}}" title='tasks')
+                +i name='tasks' cl='ui inline mini image'
+            a.icon.item(href='/alerts' class="{{isActivePath '/alerts'}}" title='alerts')
+                i.large.bell.icon
             if currentUser
                 a.item(href="/user/#{currentUser.username}/credit" class="{{isActiveRoute regex='user_credit'}}" title='your credits')
                     // | {{fixed currentUser.points}}p
@@ -82,9 +81,8 @@ template(name='nav')
                         i.user.icon
                     span.mobile.hidden #{currentUser.username}
                         //- |${{int currentUser.credit}}
-                //- else
-                //-     a#logout.ui.mobile.hidden.icon.item(href='#' title='log out')
-                //-         i.sign.out.icon
+                a#logout.ui.mobile.hidden.icon.item(href='#' title='log out')
+                    i.sign.out.icon
             else
                 unless currentUser
                     a.item(href='/login' title='enter') 

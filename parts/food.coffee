@@ -55,10 +55,14 @@ if Meteor.isClient
             Docs.find 
                 model:'food'
                 section:'salad'
+        pizzas: ->
+            Docs.find 
+                model:'food'
+                section:'pizza'
         unfiltered_food: ->
             Docs.find 
                 model:'food'
-                section:$nin:['salad','burger']
+                section:$nin:['salad','burger','pizza']
         ungrouped_food: ->
             Docs.find 
                 model:'food'

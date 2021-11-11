@@ -34,7 +34,8 @@ template(name='drink_edit')
                         +print_this
                     +html_edit key='description' direct=true
                 .six.wide.column.scrolling
-                    +number_edit key='point_price' icon='coins' label='point price/unit' direct=true
+                    +number_edit key='point_price' icon='coins' label='point price' direct=true
+                    +number_edit key='dollar_price' icon='money' label='money price' direct=true
                     +number_edit key='inventory' label='inventory' icon='warehouse' direct=true
                     +link_edit key='link' label='link' icon='globe' direct=true
                 .three.wide.column.scrolling

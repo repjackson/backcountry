@@ -15,7 +15,7 @@ body {
     filter: invert(1) !important;
 } */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 7px;
 }
 
 .largescroll::-webkit-scrollbar {
@@ -123,20 +123,20 @@ body {
 }
 
 .youtube_view {
-    /* border-radius: 10px !important; */
+    /* border-radius: 7px !important; */
 }
 
 .rounded {
-    /* border-radius: 10px !important; */
+    /* border-radius: 7px !important; */
 }
 
 .spacer{
-    height:10px !important;
+    height:7px !important;
 }
 
 
 .beer_section {
-    border: 10px single black !important;
+    border: 7px single black !important;
 }
 
 .add_model_doc {
@@ -177,7 +177,7 @@ body {
     }
     70% {
         transform: scale(1.3);
-        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+        box-shadow: 0 0 0 7px rgba(0, 0, 0, 0);
     }
     100% {
         transform: scale(0.8);
@@ -195,13 +195,13 @@ body {
     border-radius:20px !important;
 } */
 .ui.popup {
-    /* border-radius:10px !important; */
+    /* border-radius:7px !important; */
 }
 .ui.segment {
-    border-radius:10px !important;
+    border-radius:7px !important;
 }
 .ui.card {
-    border-radius:10px !important;
+    border-radius:7px !important;
 }
 /* .menu > .item:hover { */
     /* filter: drop-shadow(0px 0px 5px rgba(100,100,100,.9)) !important; */
@@ -234,7 +234,7 @@ body {
 }
 
 .menu {
-    /* border-radius: 10px !important; */
+    /* border-radius: 7px !important; */
     transition: background-color 3s ease !important;
 }
 
@@ -243,11 +243,11 @@ body {
 } */
 
 .card {
-    /* border-radius:10px !important; */
+    /* border-radius:7px !important; */
 }
 
 .image:not(.circular) {
-    /* border-radius:10px !important; */
+    /* border-radius:7px !important; */
 }
 
 
@@ -263,11 +263,11 @@ body {
 .button:hover {
     transition: transform .2s; /* Animation */
     transform: scale(1.05) !important; /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-    /*box-shadow: inset 0px 0px 10px 10px rgba(250,250,250,0.8);*/
+    /*box-shadow: inset 0px 0px 7px 7px rgba(250,250,250,0.8);*/
 }
 .zoomer:hover {
     transition: transform .5s; /* Animation */
-    /*box-shadow: inset 0px 0px 10px 10px rgba(250,250,250,0.8);*/
+    /*box-shadow: inset 0px 0px 7px 7px rgba(250,250,250,0.8);*/
     border-radius: 15px !important;
     filter: drop-shadow(0px 0px 5px 5px rgba(200,200,200,.7)) !important;
     transform: scale(1.1) !important; /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
@@ -282,7 +282,7 @@ body {
 }
 
 .accordion {
-    /* border-radius: 10px !important; */
+    /* border-radius: 7px !important; */
     /* opacity: .8 !important; */
     background-color: rgba(255,255,255, 0.3) !important;
     padding:5px !important;
@@ -310,7 +310,7 @@ body {
   color: green;
   background-color: white;
   padding: 30px 30px;
-  /* border-radius: 10px; */
+  /* border-radius: 7px; */
   font-size: 30px;
   line-height: 130%;
   font-weight: bold;
@@ -329,7 +329,7 @@ body {
 .button:active {
     /*color: black !important;*/
     /*background-color: darkgrey !important; */
-    /*box-shadow: inset 5px 5px 10px #333 !important; */
+    /*box-shadow: inset 5px 5px 7px #333 !important; */
     box-shadow: 2px 2px 2px 2px lightgrey !important; 
 }
 
@@ -428,11 +428,11 @@ body {
 
 
 .input{
-    -webkit-border-radius: 10px !important;
-    border-radius: 10px !important;
+    -webkit-border-radius: 7px !important;
+    border-radius: 7px !important;
 }
 input:not(.no_format){
-    border-radius: 10px !important;
+    border-radius: 7px !important;
     margin-bottom: 3px !important;
     margin-top: 3px !important;
     /* font-size: 120% !important; */
@@ -445,8 +445,8 @@ input:not(.no_format){
 }
 
 textarea{
-    /* -webkit-border-radius: 10px !important; */ */
-    /* border-radius: 10px !important; */
+    /* -webkit-border-radius: 7px !important; */ */
+    /* border-radius: 7px !important; */
 }
 input.username_search{
     -webkit-border-radius: 25px !important; */
@@ -483,7 +483,7 @@ input.username_search{
 
 
 .shadowed{
-    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2) !important;
+    box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.2) !important;
 }
 .segment, .label:not(.no_format){
     /* -webkit-border-radius: 5px !important; */
@@ -497,7 +497,7 @@ input.username_search{
     /* -webkit-border-radius: 5px !important; */
     /* -moz-border-radius: 5px !important; */
     opacity:.4 !important;
-    /* border-radius: 10px !important; */
+    /* border-radius: 7px !important; */
 }
 
 /* .segment {
@@ -518,7 +518,7 @@ input.username_search{
     font-size: 110% !important;
 
     /* background-color: rgba(250,250,250,1) !important; */
-    border-radius: 10px !important;
+    border-radius: 7px !important;
     /*border: solid !important;*/
     /*border-width: 1px !important;*/
     border-color: lightgrey !important;
@@ -590,9 +590,9 @@ input.username_search{
         0px 4px rgba(118,118,118,1),
         0px 5px rgba(108,108,108,1),
         0px 6px rgba(98,98,98,1),
-        0px 10px rgba(88,88,88,1),
+        0px 7px rgba(88,88,88,1),
         0px 8px rgba(78,78,78,1),
-        0px 10px 2px 0px rgba(128,128,128,.6); /* shadow */
+        0px 7px 2px 0px rgba(128,128,128,.6); /* shadow */
 } */
 
 .button:active{
@@ -806,7 +806,7 @@ h1.ui.header{
 .overlay-text {
   color: #f8f8ff;
   background: #89131f;
-  padding: 10px;
+  padding: 7px;
   font-size: 2.5em !important;
   font-weight: 300 !important;
 }
@@ -835,12 +835,12 @@ h1.ui.header{
 
 .slider-header {
   color: #fff;
-  padding: 10px;
+  padding: 7px;
   font-size: 3em !important;
 }
 .slider-subheader {
   color: #fff;
-  padding: 10px;
+  padding: 7px;
 }
 /* @font-face {
   font-family: imogen;
@@ -1044,19 +1044,19 @@ h1.ui.header{
 .f13 {
   font-size: 400% !important;
   line-height: 120% !important;
-  margin-bottom: 10px !important; }
+  margin-bottom: 7px !important; }
 .f13 {
   font-size: 300% !important;
   line-height: 120% !important;
-  margin-bottom: 10px !important; }
+  margin-bottom: 7px !important; }
 .f11 {
   font-size: 250% !important;
   line-height: 120% !important;
-  margin-bottom: 10px !important; }
+  margin-bottom: 7px !important; }
 .f10 {
   font-size: 200% !important;
   line-height: 120% !important;
-  margin-bottom: 10px !important; }
+  margin-bottom: 7px !important; }
 .f9 {
   font-size: 180% !important;
   line-height: 120% !important;

@@ -42,13 +42,13 @@ template(name='user_layout')
                     +profile_nav_button label='dashboard' icon='dashboard' key='dashboard'
                     +profile_nav_button label='products' icon='shop' key='products'
                     +profile_nav_button label='orders' icon='money' key='orders'
-                    a.ui.compact.circular.large.button(href="/user/#{username}/credit" class="{{isActiveRoute regex='user_credit'}}")
+                    a.ui.large.button(href="/user/#{username}/credit" class="{{isActiveRoute regex='user_credit'}}")
                         +i name='money' cl='ui avatar image'
                         |credit
-                    a.ui.compact.circular.large.button(href="/user/#{username}/friends" class="{{isActiveRoute 'user_friends'}}")
+                    a.ui.large.button(href="/user/#{username}/friends" class="{{isActiveRoute 'user_friends'}}")
                         +i name='meeting' cl='ui avatar image'
                         |friends
-                    a.ui.compact.circular.large.button(href="/user/#{username}/reservations" class="{{isActiveRoute 'user_reservations'}}")
+                    a.ui.large.button(href="/user/#{username}/reservations" class="{{isActiveRoute 'user_reservations'}}")
                         +i name='clock' cl='ui avatar image'
                         |reservations
         
@@ -58,7 +58,7 @@ template(name='user_layout')
                         
 
 template(name='profile_nav_button')                        
-    a.ui.compact.circular.large.button(href="/user/#{current_username}/#{key}" class="{{isActiveRoute regex=key}}")
+    a.ui.large.button(href="/user/#{current_username}/#{key}" class="{{isActiveRoute regex=key}}")
         +i name=icon cl='ui avatar image'
         |#{label}
 
