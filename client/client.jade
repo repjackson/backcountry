@@ -50,15 +50,21 @@ template(name='nav')
             //     +i name='search' cl='ui inline mini image'
             // a.icon.disabled.item.zoomer(href='/stats' class="{{isActivePath '/stats'}}" title='stats')
             //     +i name='line-chart' cl='ui inline mini image'
-            a.item.zoomer(href='/beer' class="{{isActivePath '/beer'}}" title='beer')
+            a.item.zoomer(href='/drinks' class="{{isActivePath '/drinks'}}" title='beer')
                 +i name='beer' cl='ui inline mini image'
-                |beer
+                |drinks
             a.item.zoomer(href='/food' class="{{isActivePath '/food'}}" title='food')
                 +i name='food' cl='ui inline mini image'
                 |menus
             a.item.zoomer(href='/orders' class="{{isActivePath '/orders'}}" title='orders')
                 +i name='order-history' cl='ui inline mini image'
                 |orders
+            a.item.zoomer(href='/customers' class="{{isActivePath '/customers'}}" title='orders')
+                +i name='groups' cl='ui inline mini image'
+                |customers
+            a.item.zoomer(href='/staff' class="{{isActivePath '/staff'}}" title='orders')
+                +i name='shield' cl='ui inline mini image'
+                |staff
         .right.menu
             // if is_admin
             //     a.item(href='/tasks' class="{{isActivePath '/tasks'}}" title='tasks')

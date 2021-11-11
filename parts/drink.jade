@@ -1,26 +1,19 @@
-template(name='food')
+template(name='drink')
     .ui.header 
-        +ibig name='pizza'
-        |food items
-    .ui.header 
-    .ui.header 
-        +ibig name='hamburger'
-        |burgers
-    .ui.header 
-        +ibig name='salad'
-        |salads
+        +i name='pizza'
+        |drink items
     .ui.stackable.centered.cards
-        each food_docs
-            +food_card
+        each drink_docs
+            +drink_card
         
-template(name='food_card')
-    a.card(href="/food/#{_id}")
+template(name='drink_card')
+    a.card(href="/drink/#{_id}")
         img.ui.centered.image(src="{{c.url image_id height=500 width=500 background='white' crop='pad'}}")
         .content
-            a.ui.header(href="/food/#{_id}") #{title}
+            a.ui.header(href="/drink/#{_id}") #{title}
         
         
-template(name='food_edit')
+template(name='drink_edit')
     with current_doc
         .ui.stackable.padded.grid
             .row
@@ -30,12 +23,12 @@ template(name='food_edit')
                     .ui.inline.header 
                         small editing
                         |'#{title}'
-                        small food
+                        small drink
                     +text_edit key='title' icon='header' direct=true
                     +image_edit key='image_id' direct=true
                     +array_edit key='tags' icon='tags' direct=true
                     +array_edit key='location_tags' label='location tags' icon='marker' direct=true
-                    .ui.icon.small.red.button.delete_food_item 
+                    .ui.icon.small.red.button.delete_drink_item 
                         i.trash.icon
                     if in_dev
                         +print_this
@@ -46,10 +39,10 @@ template(name='food_edit')
                     +link_edit key='link' label='link' icon='globe' direct=true
                 .three.wide.column.scrolling
                     +boolean_edit key='published' label='published'
-                    +number_edit key='calories' label='calories' icon='food' direct=true
+                    +number_edit key='calories' label='calories' icon='drink' direct=true
                     
     
-template(name='food_location')
+template(name='drink_location')
     .ui.inline.header current location
     |#{current_location}
     
@@ -57,26 +50,26 @@ template(name='food_location')
 
 
 
-template(name='user_foods')
+template(name='user_drinks')
     .scrolling
         if is_current_user
-            .ui.circular.button.add_food
+            .ui.circular.button.add_drink
                 i.plus.icon
-                |food
-        each foods
-            +profile_food_item
+                |drink
+        each drinks
+            +profile_drink_item
 
-template(name='profile_food_item')
+template(name='profile_drink_item')
     .ui.segment.grid
         .row
             .four.wide.column
                 +image_view key='image' direct=true cl='zoom ui tiny image'
             .twelve.wide.column
                 .ui.header #{title}
-                a.ui.small.header.inline.lowercase(href="/food/#{_id}/")
+                a.ui.small.header.inline.lowercase(href="/drink/#{_id}/")
                     |#{price_per_serving}c / #{serving_unit}
                 .ui.small.inline.header #{when}
-                a.ui.button(href="/food/#{_id}/")
+                a.ui.button(href="/drink/#{_id}/")
                     |view
                     i.right.chevron.icon
                 if is_admin
@@ -84,7 +77,7 @@ template(name='profile_food_item')
         
         
         
-template(name='food_view')
+template(name='drink_view')
     with current_doc
         .ui.stackable.padded.grid
             //- img.ui.large.rounded.image(src="{{c.url image width=500 height=500 gravity='face' crop='fill'}}")
@@ -93,13 +86,13 @@ template(name='food_view')
                     // .ui.header 
                     //     small viewing
                     //     |#{title}
-                    //     small food
+                    //     small drink
                     .ui.big.header #{title}
                     a.ui.big.compact.button.fly_left(href="/" title='shop')
                         i.left.chevron.icon
                         +i name='shop' cl='ui inline image'
                     if can_edit
-                        a.ui.icon.large.basic.button(href="/food/#{_id}/edit")
+                        a.ui.icon.large.basic.button(href="/drink/#{_id}/edit")
                             i.pencil.large.blue.icon
                     +bookmark_button
                     .ui.small.inline.header
@@ -135,12 +128,12 @@ template(name='food_view')
                         +link_view key='link' label='link' direct=true
                     // unless sold_out
                     //     if point_price
-                    //         .ui.big.green.fluid.button.buy_food.fly_right 
+                    //         .ui.big.green.fluid.button.buy_drink.fly_right 
                     //             i.cart.large.icon
                     //             |buy for #{point_price}p
                     //     // .ui.horizontal.divider or
                     //     // if dollar_price
-                    //     //     .ui.big.green.fluid.button.buy_food 
+                    //     //     .ui.big.green.fluid.button.buy_drink 
                     //     //         i.cart.large.icon
                     //     //         |buy for $#{dollar_price}
                     // else 
@@ -159,29 +152,29 @@ template(name='food_view')
                     +boolean_view key='pickup_delivery' label='pickup' direct=true icon='box'
                     +boolean_view key='unit_dropoff_delivery' label='home dropoff' icon='contactless-delivery' direct=true
                     +boolean_view key='building_dropoff_delivery' label='building dropoff' icon='building' direct=true
-                    +food_orders
-                    +related_foods
+                    +drink_orders
+                    +related_drinks
                     
         
         
-template(name='related_foods')
+template(name='related_drinks')
     .ui.header 
         +i name='code-fork'
-        |#{related_foods.count}
-        |related foods
+        |#{related_drinks.count}
+        |related drinks
     .ui.selection.animated.link.list
-        each related_food_docs
-            a.item(href="/food/#{_id}")
+        each related_drink_docs
+            a.item(href="/drink/#{_id}")
                 | #{title}
                 |#{price}p
     
-template(name='food_orders')
+template(name='drink_orders')
     .ui.header 
         +i name='order-history'
-        |#{food_order_docs.count}
+        |#{drink_order_docs.count}
         |orders
     .ui.selection.animated.link.list
-        each food_order_docs
+        each drink_order_docs
             a.item(href="/order/#{_id}")
                 | #{when} #{_author_username}
     
