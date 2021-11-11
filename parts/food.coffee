@@ -12,8 +12,10 @@ if Meteor.isClient
 
     Template.food.onCreated ->
         @autorun => @subscribe 'food', ->
-    Template.food_orders.onCreated ->
+    Template.food_view.onCreated ->
         @autorun => @subscribe 'food_orders',Router.current().params.doc_id, ->
+    
+    
     Template.food_orders.helpers
         food_order_docs: ->
             Docs.find 
@@ -50,6 +52,21 @@ if Meteor.isClient
                 model:$in:['food','product']
     Template.food_view.helpers
         sold_out: -> @inventory < 1
+        product_orders: ->
+            Docs.find 
+                model:'order'
+                product_id:Router.current().params.doc_id
+        
+        
+    Template.food_view.events
+        'click .quick_buy': ->
+            if confirm 'quick buy?'
+                new_id = 
+                    Docs.insert 
+                        model:'order'
+                        product_id:@_id
+                
+        
     Template.food_card.events
         'click .flat_pick_tag': -> picked_tags.push @valueOf()
     Template.food_view.events
@@ -162,5 +179,5 @@ if Meteor.isServer
         food = Docs.findOne doc_id
         Docs.find
             model:'order'
-            food_id:food._id
+            product_id:food._id
             

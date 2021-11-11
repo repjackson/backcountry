@@ -2,13 +2,13 @@ template(name='food')
     .ui.header 
         +i name='pizza'
         |food items
-    each food_docs
-        +food_card
+    .ui.stackable.centered.cards
+        each food_docs
+            +food_card
         
 template(name='food_card')
-    .ui.header #{title}
+    a.card(href="/food/#{_id}")
+        img.ui.centered.image(src="{{c.url image_id height=500 width=500 background='white' crop='pad'}}")
+        .content
+            a.ui.header(href="/food/#{_id}") #{title}
         
-template(name='food_orders')    
-
-template(name='food_view')
-template(name='food_edit')
