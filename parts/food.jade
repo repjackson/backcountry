@@ -1,16 +1,24 @@
 template(name='food')
     .ui.header 
         +ibig name='pizza'
-        |food items
-    .ui.header 
-    .ui.header 
+        |food
+    .ui.center.aligned.big.header 
         +ibig name='hamburger'
         |burgers
-    .ui.header 
+    .ui.stackable.centered.cards
+        each burgers
+            +food_card
+    .ui.center.aligned.big.header 
         +ibig name='salad'
         |salads
     .ui.stackable.centered.cards
-        each food_docs
+        each salads
+            +food_card
+    .ui.center.aligned.big.header 
+        +ibig name='food'
+        |everything else
+    .ui.stackable.centered.cards
+        each ungrouped_food
             +food_card
         
 template(name='food_card')
@@ -42,6 +50,9 @@ template(name='food_edit')
                     +html_edit key='description' direct=true
                 .six.wide.column.scrolling
                     +number_edit key='point_price' icon='coins' label='point price/unit' direct=true
+                    +number_edit key='dollar_price' icon='money' label='dollar price' direct=true
+                    +text_edit key='section' label='section' direct=true
+                    // +key_value_set key='section' value='salad' direct=true
                     +number_edit key='inventory' label='inventory' icon='warehouse' direct=true
                     +link_edit key='link' label='link' icon='globe' direct=true
                 .three.wide.column.scrolling
@@ -101,17 +112,17 @@ template(name='food_view')
                     if can_edit
                         a.ui.icon.large.basic.button(href="/food/#{_id}/edit")
                             i.pencil.large.blue.icon
-                    +bookmark_button
+                    // +bookmark_button
                     .ui.small.inline.header
                         |added by #{_author_username}
                         |#{when}
                     .ui.hidden.divider
                     +voting_full
                     a.ui.fluid.basic.green.big.button.add_to_cart
-                        i.cart.plus.icon
+                        i.cart.plus.big.icon
                         |add to cart
                     a.ui.fluid.green.big.button.quick_buy
-                        i.lightning.icon
+                        i.lightning.big.icon
                         |quick buy
                     .ui.header 
                         |orders 

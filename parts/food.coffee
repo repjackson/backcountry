@@ -47,9 +47,21 @@ if Meteor.isClient
                 Router.go "/food"
 
     Template.food.helpers
-        food_docs: ->
+        burgers: ->
             Docs.find 
-                model:$in:['food','product']
+                model:'food'
+                section:'burger'
+        salads: ->
+            Docs.find 
+                model:'food'
+                section:'salad'
+        unfiltered_food: ->
+            Docs.find 
+                model:'food'
+                section:$nin:['salad','burger']
+        ungrouped_food: ->
+            Docs.find 
+                model:'food'
     Template.food_view.helpers
         sold_out: -> @inventory < 1
         product_orders: ->
