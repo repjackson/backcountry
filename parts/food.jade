@@ -1,0 +1,14 @@
+template(name='food')
+    .ui.header 
+        +i name='pizza'
+        |food items
+    each food_docs
+        +food_card
+        
+template(name='food_card')
+    .ui.header #{title}
+        
+template(name='food_orders')    
+
+template(name='food_view')
+template(name='food_edit')

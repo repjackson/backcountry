@@ -178,9 +178,9 @@ Meteor.publish 'results', (
     console.log picked_tags
     self = @
     match = {}
-    match.model = $in:['product','service','rental','post']
+    match.model = $in:['food','drink','event','post']
     
-    # match.app = 'goldrun'
+    match.app = 'bc'
     # if view_open
     #     match.open = $ne:false
     # if view_delivery
@@ -236,9 +236,9 @@ Meteor.publish 'facets', (
 
     self = @
     match = {}
-    match.model = $in:['product','service','rental','post']
+    match.model = $in:['food','drink','event','post']
     # match.model = 'product'
-    # match.app = 'goldrun'
+    match.app = 'bc'
     # if view_open
     #     match.open = $ne:false
 

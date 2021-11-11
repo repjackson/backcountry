@@ -4,11 +4,6 @@ if Meteor.isClient
         @render 'shop'
         ), name:'shop'
 
-    Router.route '/', (->
-        @layout 'layout'
-        @render 'posts'
-        ), name:'home'
-
 
     Template.post_orders.onCreated ->
         @autorun => @subscribe 'post_orders',Router.current().params.doc_id, ->
