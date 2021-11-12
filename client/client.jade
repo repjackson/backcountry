@@ -66,6 +66,10 @@ template(name='nav')
                 +i name='shield' cl='ui inline mini image'
                 |staff
         .right.menu
+            if cart_items 
+                .item 
+                    each cart_items 
+                        img.ui.avatar.image(src="{{c.url ref_product.image_id width=200 height=200 gravity='face' crop='fill'}}")
             a.item(href='/tasks' class="{{isActivePath '/tasks'}}" title='tasks')
                 +i name='tasks' cl='ui inline mini image'
             a.icon.item(href='/alerts' class="{{isActivePath '/alerts'}}" title='alerts')

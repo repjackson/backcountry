@@ -10,6 +10,10 @@ Template.registerHelper 'sort_icon', () -> Session.get('sort_icon')
 Template.registerHelper 'current_limit', () -> parseInt(Session.get('limit'))
 
 
+Template.registerHelper 'ref_product', () ->
+    Docs.findOne 
+        _id: @product_id
+
 Template.registerHelper 'current_username', () ->
     Router.current().params.username
 

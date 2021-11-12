@@ -189,5 +189,6 @@ if Meteor.isServer
         user = Meteor.users.findOne username:username
         Docs.find({
             model:'order'
+            app:'bc'
             _author_id: user._id
         }, limit:20)

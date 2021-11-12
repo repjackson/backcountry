@@ -1,31 +1,39 @@
 template(name='food')
-    .ui.header 
-        +ibig name='pizza'
-        |food
-    .ui.center.aligned.big.header 
-        +ibig name='hamburger'
-        |burgers
-    .ui.stackable.centered.cards
-        each burgers
-            +food_card
-    .ui.center.aligned.big.header 
-        +ibig name='pizza'
-        |pizzas
-    .ui.stackable.centered.cards
-        each pizzas
-            +food_card
-    .ui.center.aligned.big.header 
-        +ibig name='salad'
-        |salads
-    .ui.stackable.centered.cards
-        each salads
-            +food_card
-    .ui.center.aligned.big.header 
-        +ibig name='food'
-        |everything else
-    .ui.stackable.centered.cards
-        each unfiltered_food
-            +food_card
+    .ui.stackable.padded.grid
+        .sixteen.wide.column
+            .ui.inline.header 
+                +ibig name='pizza'
+                |food
+            .ui.big.button
+                +i name='hamburger'
+            .ui.big.button
+                +i name='salad'
+            .ui.big.button
+                +i name='pizza'
+            .ui.big.header 
+                +ibig name='hamburger'
+                |burgers
+            .ui.stackable.four.stackable.cards
+                each burgers
+                    +food_card
+            .ui.big.header 
+                +ibig name='pizza'
+                |pizzas
+            .ui.stackable.four.cards
+                each pizzas
+                    +food_card
+            .ui.big.header 
+                +ibig name='salad'
+                |salads
+            .ui.stackable.four.cards
+                each salads
+                    +food_card
+            .ui.big.header 
+                +ibig name='food'
+                |everything else
+            .ui.stackable.four.cards
+                each unfiltered_food
+                    +food_card
         
 template(name='food_card')
     a.card(href="/food/#{_id}")
@@ -120,7 +128,7 @@ template(name='food_view')
                     if can_edit
                         a.ui.icon.large.basic.button(href="/food/#{_id}/edit")
                             i.pencil.large.blue.icon
-                    // +bookmark_button
+                    +bookmark_button
                     .ui.small.inline.header
                         |added by #{_author_username}
                         |#{when}

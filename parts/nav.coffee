@@ -25,6 +25,8 @@ if Meteor.isClient
     Template.nav.onCreated ->
         Session.setDefault 'limit', 20
         @autorun -> Meteor.subscribe 'me'
+        @autorun -> Meteor.subscribe 'my_cart'
+        @autorun -> Meteor.subscribe 'food'
         # @autorun -> Meteor.subscribe 'users'
         # @autorun -> Meteor.subscribe 'users_by_role','staff'
         # @autorun -> Meteor.subscribe 'unread_messages'
@@ -55,9 +57,6 @@ if Meteor.isClient
                     view_roles: $in:['public']
                 }, sort:title:1
 
-        models: ->
-            Docs.find
-                model:'model'
 
         unread_count: ->
             unread_count = Docs.find({
@@ -131,11 +130,19 @@ if Meteor.isServer
             limit:5
             sort:_timestamp:-1
 
-    Meteor.publish 'bookmarked_models', ->
-        if Meteor.userId()
-            Docs.find
-                model:'model'
-                bookmark_ids:$in:[Meteor.userId()]
+    Meteor.publish 'my_cart', ->
+        # if Meteor.userId()
+        Docs.find
+            model:'cart_item'
+            app:'bc'
+            _author_id:Meteor.userId()
+
+    Meteor.publish 'food', ->
+        # if Meteor.userId()
+        Docs.find
+            model:'food'
+            app:'bc'
+            # _author_id:Meteor.userId()
 
 
     Meteor.publish 'unread_messages', (username)->
