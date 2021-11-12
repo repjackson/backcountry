@@ -9,6 +9,10 @@ Template.registerHelper 'sort_label', () -> Session.get('sort_label')
 Template.registerHelper 'sort_icon', () -> Session.get('sort_icon')
 Template.registerHelper 'current_limit', () -> parseInt(Session.get('limit'))
 
+Template.registerHelper 'cart_items', () ->
+    Docs.find 
+        model:'cart_item'
+        _author_id:Meteor.userId()
 
 Template.registerHelper 'ref_product', () ->
     Docs.findOne 

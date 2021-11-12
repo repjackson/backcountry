@@ -1,3 +1,16 @@
+template(name='cart')
+    .ui.stackable.padded.grid
+        .ui.sixteen.wide.column
+            .ui.header 
+                i.shopping.cart.icon
+                |cart 
+            .ui.large.list
+                each cart_items
+                    .item
+                        .ui.inline.header #{ref_product.title}
+                        i.remove.circular.link.icon.remove_item
+                    
+                    
 template(name='orders')
     .ui.center.aligned.big.header 
         +ibig name='order-history'

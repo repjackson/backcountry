@@ -67,7 +67,7 @@ template(name='nav')
                 |staff
         .right.menu
             if cart_items 
-                .item 
+                a.item(href="/cart") 
                     each cart_items 
                         img.ui.avatar.image(src="{{c.url ref_product.image_id width=200 height=200 gravity='face' crop='fill'}}")
             a.item(href='/tasks' class="{{isActivePath '/tasks'}}" title='tasks')

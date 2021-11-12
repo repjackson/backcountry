@@ -1,4 +1,8 @@
 if Meteor.isClient
+    Router.route '/cart', (->
+        @layout 'layout'
+        @render 'cart'
+        ), name:'cart'
     Router.route '/orders', (->
         @layout 'layout'
         @render 'orders'
@@ -10,6 +14,14 @@ if Meteor.isClient
 
 
 
+
+    Template.cart.events
+        'click .remove_item': ->
+            Docs.remove @_id
+
+
+    Template.cart.onCreated ->
+        @autorun => Meteor.subscribe 'my_cart', Router.current().params.doc_id
     Template.order_edit.onCreated ->
         @autorun => Meteor.subscribe 'doc', Router.current().params.doc_id
         @autorun => Meteor.subscribe 'product_from_order_id', Router.current().params.doc_id, ->
